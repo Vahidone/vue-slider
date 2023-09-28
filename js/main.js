@@ -1,3 +1,4 @@
+
 const {createApp} = Vue;
 
 createApp({
@@ -31,7 +32,7 @@ createApp({
   },
 
 
-  
+
   methods: {
     btnNextPrev(isNext){
       isNext ? this.counterImg++ : this.counterImg--;
