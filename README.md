@@ -13,6 +13,7 @@
 ### Bonus 1:applicare l’autoplay allo slider: ogni 3 secondi, cambia immagine automaticamente
 
 #### pseudocodice
+1. Utilizzare setInterval al'interno del mounted applicando su btnNextPrev() 
 
 ### Bonus 2: quando il mouse va in hover sullo slider, bloccare l’autoplay e farlo riprendere quando esce.
 
