@@ -18,3 +18,8 @@
 ### Bonus 2: quando il mouse va in hover sullo slider, bloccare l’autoplay e farlo riprendere quando esce.
 
 #### pseudocodice
+
+1. Aggiungere una variabile per tenere traccia dello stato del mouse (chiamata isHovered)
+2. Impostare un autoplayInterval utilizzando setInterval. All'interno dell'intervallo, verificare se isHovered è false prima di eseguire l'azione dell'autoplay.
+3. Creare una funzione per cancellare autoplayInterval fermando l'autoplay.
+4. Aggiungere gli eventi @mouseenter e @mouseleave in html per impostare correttamente isHovered.
