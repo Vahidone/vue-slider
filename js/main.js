@@ -29,6 +29,8 @@ createApp({
       ],
 
       counterImg: 0,
+      autoplayInterval: null,
+      isHovered: false
 
       
     }
@@ -48,16 +50,37 @@ createApp({
       }else if(this.counterImg < 0){
         this.counterImg = this.photos.length - 1;
       }
-    }
+    },
+
+    startAutoplay() {
+      this.autoplayInterval = setInterval(() => {
+        this.btnNextPrev(true);
+
+        if (!this.isHovered) {
+          this.btnNextPrev(true);
+        }
+        
+      }, 3000);
+
+      
+    },
+
+    stopAutoplay() {
+      clearInterval(this.autoplayInterval);
+    },
+
+
     
   },
 
   mounted () {
+    this.startAutoplay();
 
     setInterval (() => {
       this.btnNextPrev(false)
     }, 3000);
-  }
+
+  },
   
 
 
