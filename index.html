@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Includi Vue.js -->
-   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+   <!-- link Vue.js -->
+   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <!-- link FONT AWESOME  -->
   <link
@@ -25,45 +25,43 @@
   
 </head>
 <body>
-  <div id="app">
+   <div id="app">
     <div class="main-wrapper">
-      <div class="container d-flex justify-content-center align-items-center">
-        <div class="row-container">
-          <div class="col-10 slider h-100">
-            <div class="items-wrapper"></div>
+
+
+
+      <div class="slider">
   
-           
-          </div>
-  
-  
-  
-          <div class="col-2 thumbnails h-100 relative ">
-            <div class="thumb">
-              <img src="img/01.webp" />
-            </div>
-            <div class="thumb">
-              <img src="img/02.webp" />
-            </div>
-            <div class="thumb">
-              <img src="img/03.webp" />
-            </div>
-            <div class="thumb">
-              <img src="img/04.webp" />
-            </div>
-            <div class="thumb">
-              <img src="img/05.webp" />
-            </div>
-            <div id="btn-b" class="btn top">
-              <i class="fa-solid fa-chevron-up"></i>
-            </div>
-            <div id="btn-t" class="btn bottom">
-              <i class="fa-solid fa-chevron-down"></i>
+        <div class="carousel-img">
+        
+          <div class="img-big">
+            <!-- bindiamo i dati delle immagini, titoli e testi -->
+            <img :src="photos[counterImg].image" >
+
+            <div class="carousel-text">
+              <h4>{{photos[counterImg].title}}</h4>
+              <p>{{photos[counterImg].text}}</p>
             </div>
           </div>
         </div>
+  
+       <!-- le thumbs  -->
+        <div class="thumbnails">
+          <div class="carousel-thumb">
+           
+            <img class="thumb-big" :src="photo.image" v-for="(photo,index) in photos" 
+              :class="{'active': counterImg === index}"
+              @click="counterImg = index">
+          </div>
+  
+          <!-- i bottoni -->
+          <button type="button"  @click="btnNextPrev(false)" class="btn-np btn-up"><i class="fa-solid fa-chevron-up"></i></button>
+
+          <button type="button" @click="btnNextPrev(true)"  class="btn-np btn-down"><i class="fa-solid fa-chevron-down"></i></button>
+  
+        </div>
       </div>
     </div>
-
   </div>
  
 
