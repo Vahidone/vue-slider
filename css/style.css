@@ -17,13 +17,13 @@ body{
 }
 
 .slider{
-  height: 350px;
+  height: 450px;
   display: flex;
 }
 
 .carousel-img{
   position: relative;
-  width: 800px;
+  width: 1000px;
   height: 100%;
 
 }
