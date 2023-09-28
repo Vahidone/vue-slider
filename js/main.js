@@ -29,6 +29,8 @@ createApp({
       ],
 
       counterImg: 0,
+
+      
     }
   },
 
@@ -49,6 +51,13 @@ createApp({
     }
     
   },
+
+  mounted () {
+
+    setInterval (() => {
+      this.btnNextPrev(false)
+    }, 3000);
+  }
   
 
 
